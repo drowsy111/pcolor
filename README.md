@@ -2,6 +2,27 @@
 
 智能彩色打印库（纯标准库，**零第三方依赖**）。256 色 ANSI（低饱和护眼色，Gruvbox/Solarized 风格），VS Code / Windows Terminal 支持。
 
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Coverage](https://img.shields.io/badge/Types_covered-100%25-orange)
+![Deps](https://img.shields.io/badge/Zero_dependencies-yellowgreen)
+![CI](https://github.com/你的用户名/pcolor/actions/workflows/ci.yml/badge.svg)
+
+## 🖼 效果预览
+
+<!--
+  把终端彩色输出截图保存为 docs/demo.png 后，取消下面这行注释即可显示效果图
+-->
+
+<!-- ![demo](docs/demo.png) -->
+
+```text
+运行 demo：
+  python tests/test_check.py      # 66 checks, PASS 66, FAIL 0
+  import pcolor; print(t, t.shape, t.dtype)   # 一行导入，全部自动上色
+```
+
+
 > 名称含义：**p**rint + **color** = 彩色打印。
 >
 > ⚠️ 注意：`pcolor` 在 PyPI 上已被他人占用，所以**暂时不能发布到 PyPI**（`pip install pcolor` 会装到别人的包）；本地安装 / 发 wheel 文件不受影响。
