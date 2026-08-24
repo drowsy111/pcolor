@@ -66,6 +66,8 @@ print(f"t1.shape: {t1.shape}, t1.dtype: {t1.dtype}, t1: {t1}")
 
 不需要 `pcolor.enable()`——**导入即自动接管 `print`**。想恢复原生 `print`：`pcolor.disable()`。
 
+> 🎬 **完整效果演示**：`python examples/demo.py`（12 个场景，覆盖全部类型、字符串识别与字体属性）
+
 ## 📖 使用方式
 
 ### 1. 自动接管 print（推荐）
