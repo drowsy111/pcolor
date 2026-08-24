@@ -29,13 +29,13 @@
     datetime=棕   enum=灰紫  无关字符串=柔橙(统一)  其它对象=默认
 """
 
+import builtins
 import re
 import sys
-import builtins
 from enum import Enum as _Enum
 
-__all__ = ["c", "p", "pp", "sho", "enable", "disable",
-           "set_style_attr", "clear_style_attr", "register", "unregister"]
+__all__ = ["c", "clear_style_attr", "disable", "enable", "p", "pp",
+           "register", "set_style_attr", "sho", "unregister"]
 
 # 256 色 ANSI 码（\033[38;5;Nm），VS Code / Windows Terminal 均支持
 # 护眼基调：低饱和柔和色；色相尽量拉开，相近类型可区分（* 为高频相邻出现的组合刻意错开）
