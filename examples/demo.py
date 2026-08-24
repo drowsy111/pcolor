@@ -22,7 +22,7 @@ import torch
 # 让 clone 后无需安装也能直接演示
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
 
-import pcolor                          # ← 导入即自动生效
+import pcolor  # noqa: E402  # 导入即自动生效（位于 sys.path 引导之后）
 
 
 class Color(Enum):
@@ -66,7 +66,7 @@ print("memoryview:", memoryview(b"abc"), "| frozenset:", frozenset([1, 2]))
 # ========== 4. 扩充类型 ==========
 sec("4. 扩充类型：Decimal/Fraction/datetime/Enum/deque/Counter")
 print()
-print(Decimal("3.14"), Fraction(1, 3), datetime(2025, 6, 1, 12, 30), Color.RED, deque([1, 2]), Counter("aabbcc"))
+print(Decimal("3.14"), Fraction(1, 3), datetime(2025, 6, 1, 12, 30), Color.RED, deque([1, 2]), Counter("aabbcc"))  # noqa: DTZ001
 # 期望：Decimal/Fraction 浅绿、datetime 棕、Color.RED 灰紫、deque 梅紫、Counter 紫红
 
 # ========== 5. torch 深度学习对象全景 ==========
