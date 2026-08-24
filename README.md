@@ -6,7 +6,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Coverage](https://img.shields.io/badge/Types_covered-100%25-orange)
 ![Deps](https://img.shields.io/badge/Zero_dependencies-yellowgreen)
-![CI](https://github.com/你的用户名/pcolor/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/drowsy111/pcolor/actions/workflows/ci.yml/badge.svg)
 
 ## 🖼 效果预览
 
