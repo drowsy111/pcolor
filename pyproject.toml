@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "pcolor"
-version = "1.0.0"
+version = "1.0.1"
 description = "Smart color printing for deep-learning types, numbers and strings."
 readme = "README.md"
 requires-python = ">=3.7"

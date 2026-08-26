@@ -263,6 +263,12 @@ def _compute_style(t, module, name):
         return "sklearn"
     if "tensorflow" in module or "keras" in module:
         return "tf"
+    # 2.4) 继承自 torch 的自定义类（如 class Model(nn.Module)，定义在 __main__/自己模块里）
+    #      查类型祖先链(MRO)即可识别，无需 import torch，保持零依赖
+    #      （放在主框架分支之后：直接 torch/numpy 类型先被名字精准识别）
+    for base in getattr(t, "__mro__", ())[1:]:
+        if "torch" in (getattr(base, "__module__", "") or ""):
+            return "torch_other"
     # 2.5) 标准库其它容器/数值/时间
     if module.startswith("collections"):
         if name in ("Counter", "OrderedDict", "defaultdict", "ChainMap"):

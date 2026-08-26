@@ -1,12 +1,11 @@
 r"""pcolor 自动化检查器：逐项断言颜色，有 bug 直接报 FAIL，不用肉眼。
 
-运行（在仓库任意位置）：
-    python tests/test_check.py
+运行：
+    & C:\Users\87936\.conda\envs\PYTHON_DL\python.exe C:\Users\87936\Desktop\dl_case\pcolor_check.py
 结果看最后一行：ALL PASS (N 项)  /  has FAIL (M 项)
 """
 import builtins
 import io
-import os
 import sys
 from collections import Counter, deque
 from datetime import datetime
@@ -17,8 +16,7 @@ from fractions import Fraction
 import numpy as np
 import torch
 
-# 仓库根目录加入 sys.path（可移植，与机器无关）
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")))
+sys.path.insert(0, r"C:\Users\87936\Desktop\dl_case\pcolor")   # 确保用本地源码 v0.3.0
 import pcolor
 from pcolor import _highlight_str, _render, _style_for, c, clear_style_attr, set_style_attr
 
@@ -189,6 +187,21 @@ try:
     check("G 非法样式名报错", False)
 except ValueError:
     check("G 非法样式名报错", True)
+
+
+# ---------- H. 自定义 torch 子类（如 class Model(nn.Module) 定义在 __main__） ----------
+class MyModel(torch.nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.fc = torch.nn.Linear(2, 2)
+
+
+class NotTorchClass:
+    pass
+
+
+check("H 自定义 nn.Module 子类 -> torch_other", _style_for(MyModel()) == "torch_other")
+check("H 普通自定义类 -> 兜底 default", _style_for(NotTorchClass()) == "default")
 
 
 # ---------- 汇总 ----------
