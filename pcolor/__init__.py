@@ -198,6 +198,7 @@ _AI_MODULES = (
     # 机器学习库
     "sklearn", "imblearn", "catboost", "lightgbm", "xgboost", "statsmodels",
     "gensim", "nltk", "spacy", "jieba", "hanlp", "lightfm", "optuna",
+    "fasttext", "fastText",
     # 数据
     "polars", "xarray", "zarr", "h5py", "tables",
     # 视觉/音频

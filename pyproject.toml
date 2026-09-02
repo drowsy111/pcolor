@@ -1,10 +1,10 @@
-[build-system]
+﻿[build-system]
 requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "pcolor"
-version = "1.0.1"
+version = "1.0.2"
 description = "Smart color printing for deep-learning types, numbers and strings."
 readme = "README.md"
 requires-python = ">=3.7"
@@ -13,3 +13,4 @@ keywords = ["print", "color", "torch", "deep-learning", "terminal"]
 
 [tool.setuptools]
 packages = ["pcolor"]
+
