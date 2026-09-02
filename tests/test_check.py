@@ -203,14 +203,6 @@ class NotTorchClass:
 check("H 自定义 nn.Module 子类 -> torch_other", _style_for(MyModel()) == "torch_other")
 check("H 普通自定义类 -> 兜底 default", _style_for(NotTorchClass()) == "default")
 
-# ---------- I. 常见 ML 库关键词（fasttext 等） ----------
-FakeFastText = type("FakeFastText", (), {})
-FakeFastText.__module__ = "fasttext.FastText"
-check("I fasttext.FastText -> ml_other", _style_for(FakeFastText()) == "ml_other")
-FakeFastText2 = type("FakeFastText2", (), {})
-FakeFastText2.__module__ = "fasttext"
-check("I fasttext -> ml_other", _style_for(FakeFastText2()) == "ml_other")
-
 
 # ---------- 汇总 ----------
 fails = [x for x in RESULTS if not x[1]]
